@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Logic & Number Systems</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="grid">
+      <!-- Logic Gate Tester -->
+      <div class="card">
+        <h3>Combinational Logic Gate Tester</h3>
+        <p class="subtitle">Toggle inputs to observe standard gate outputs in real-time.</p>
+
+        <div class="controls">
+          <div>
+            <label>Input A</label>
+            <button id="inputA" onclick="toggleInput('A')">0</button>
+          </div>
+          <div>
+            <label>Gate</label>
+            <select id="gateSelect" onchange="calculateGate()">
+              <option value="AND">AND</option>
+              <option value="OR">OR</option>
+              <option value="NAND">NAND</option>
+              <option value="NOR">NOR</option>
+              <option value="XOR">XOR</option>
+              <option value="XNOR">XNOR</option>
+            </select>
+          </div>
+          <div>
+            <label>Input B</label>
+            <button id="inputB" onclick="toggleInput('B')">0</button>
+          </div>
+          <div>
+            <label>Output Y</label>
+            <div id="outputY" class="output-box">0</div>
+          </div>
+        </div>
+        <p class="expression">Expression: <span id="gateExpr">Y = A · B</span></p>
+      </div>
+
+      <!-- 8-Bit Number System -->
+      <div class="card">
+        <h3>8-Bit Number System & 2's Complement</h3>
+        <p class="subtitle">Convert integers (-128 to 127) to signed binary hardware representations.</p>
+
+        <label>Decimal Integer (-128 to 127):</label>
+        <input type="number" id="decimalInput" value="72" oninput="convertNumber()">
+
+        <div class="results">
+          <div>
+            <label>8-Bit Binary</label>
+            <p id="binaryRes">01001000</p>
+          </div>
+          <div>
+            <label>Hexadecimal</label>
+            <p id="hexRes">0x48</p>
+          </div>
+          <div>
+            <label>Two's Complement (Negative Inversion + 1)</label>
+            <p id="twosRes" class="highlight">10111000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coursework Projects -->
+    <h2 class="section-title">Coursework & Lab Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <span class="badge">Year 1</span>
+        <h4>Digital Logic Breadboard Labs</h4>
+        <p>Design and verification of basic adders, multiplexers, and 7-segment display decoders using 7400-series ICs.</p>
+      </div>
+      <div class="project-card">
+        <span class="badge">Year 2 (Upcoming)</span>
+        <h4>Verilog RTL Modeling</h4>
+        <p>Designing finite state machines (FSMs), ALUs, and running testbench simulations with Icarus Verilog and GTKWave.</p>
+      </div>
+      <div class="project-card">
+        <span class="badge">Year 3-4 (Upcoming)</span>
+        <h4>Physical Design & Tapeout</h4>
+        <p>CMOS transistor layout, static timing analysis (STA), and open-source ASIC flow using OpenLane.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
